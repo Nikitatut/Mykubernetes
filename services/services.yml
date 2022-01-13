@@ -1,0 +1,38 @@
+apiVersion : apps/v1
+kind : Deployment
+metadata :
+  name: my-web-deployment
+  labels:
+    app : my-k8s-application
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      project: kgb
+  template:
+    metadata:
+      labels:
+        project: kgb  #Service cмотрит эти поды
+    spec:
+      containers:
+        - name : kgb-web
+          image : adv4000/k8sphp:latest
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-single-pod-service
+  labels:
+    env : prod
+    owner : NikitaTyutikov
+spec:
+  selector:
+    porject: kgb  # Какие поды смотрит сервис
+  ports:
+    - name: app-listener
+      protocol : TCP
+      port : 80  #Port on LOAD BALANCER
+      targetPort: 80 #Port on POD
+  type: LoadBalancer
