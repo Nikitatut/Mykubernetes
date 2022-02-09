@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name : mosaad-web
-          image : adv4000/k8sphp:version2
+          image : tyutikovnikita/k8sphp:latest
           ports:
             - containerPort: 80
 ---

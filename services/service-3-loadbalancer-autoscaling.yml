@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name : xyz-web
-          image: adv4000/k8sphp:latest
+          image: tyutikovnikita/k8sphp:latest
           ports:
             - containerPort: 80
 
@@ -53,7 +53,7 @@ metadata:
   name: my-autoscaling-pod-service
   labels:
      env  : prod
-     owner: DenisAstahov
+     owner: Nikita Tyutikov
 spec:
   selector:
     project: xyz      # Selecting PODs with those Labels
