@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:
       app: jenkins
-  template:saf
+  template:
     metadata:
       labels:
         app: jenkins
