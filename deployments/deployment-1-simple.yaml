@@ -17,4 +17,5 @@ spec:
         - name : kgb-web
           image : tyutikovnikita/k8sphp:latest
           ports:
-            - containerPort: 80
+            - containerPort: 80dhgdfkgk
+            gfds
